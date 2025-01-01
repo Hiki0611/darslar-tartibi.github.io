@@ -3,99 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Darslar jadvali</title>
-  <link rel="stylesheet" href="style.css"> <!-- Подключаем файл стилей -->
+  <title>Jadval</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Навигационная панель -->
   <header>
-    <nav class="navbar">
+    <div class="navbar">
       <div class="logo">
-        <h1>Darslar jadvali</h1>
+        <h1>Jadval</h1>
       </div>
       <div class="navbar-links">
-        <form id="schedule-form">
+        <form>
           <div class="form-group">
-            <label for="course">Kurs:</label>
+            <label for="course">Kurs</label>
             <select id="course">
-              <option value="1-course">Kurs 1</option>
-              <option value="2-course">Kurs 2</option>
+              <option value="1-course">1-kurs</option>
+              <option value="2-course">2-kurs</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label for="group">Guruh:</label>
-            <select id="group"></select>
+            <label for="group">Guruh</label>
+            <select id="group">
+              <!-- Группы будут добавляться динамически с помощью JS -->
+            </select>
           </div>
-
           <div class="form-group">
-            <label for="day">Kun:</label>
+            <label for="day">Kun</label>
             <select id="day">
-              <option value="Monday">Dushanba</option>
-              <option value="Tuesday">Seshanba</option>
-              <option value="Wednesday">Chorshanba</option>
-              <option value="Thursday">Payshanba</option>
-              <option value="Friday">Juma</option>
-              <option value="Saturday">Shanba</option>
+              <option value="monday">Dushanba</option>
+              <option value="tuesday">Seshanba</option>
+              <option value="wednesday">Chorshanba</option>
+              <option value="thursday">Payshanba</option>
+              <option value="friday">Juma</option>
+              <option value="saturday">Shanba</option>
             </select>
           </div>
-
           <button type="button" id="show-schedule">Jadvalni ko'rsatish</button>
         </form>
       </div>
-    </nav>
+    </div>
   </header>
 
+  <!-- Основной контент -->
   <div class="container">
-    <h2>Jadval:</h2>
+    <h2>Jadval</h2>
     <table id="schedule-table">
       <thead>
         <tr>
-          <th>Dars nomi</th>
-          <th>Dars vaqti</th>
+          <th>Urok</th>
+          <th>Vaqt</th>
         </tr>
       </thead>
       <tbody>
-        <!-- Jadval bu yerga yuklanadi -->
+        <!-- Расписание будет добавляться динамически с помощью JS -->
       </tbody>
     </table>
   </div>
 
-  <!-- Knpka "Muallif haqida" va modali oynasi -->
+  <!-- Кнопка "Muallif haqida" -->
   <button id="author-btn">Muallif haqida</button>
 
+  <!-- Модальное окно "Muallif haqida" -->
   <div id="author-modal" class="modal">
     <div class="modal-content">
       <span id="close-btn" class="close">&times;</span>
       <h2>Muallif haqida</h2>
-      <p>Ushbu dastur Farg`ona viloyati, So`x tumanidagi Texnikumning 1 kurs 3-24 guruh talabasi GOFURJONOV HIKMATULLO tomonidan Texnikum talabalari uchun yaratildi.</p>
-      <p>Telefon raqam: +998 99 141 98 36</p>
-      <button id="contact-author-btn">Muallif-ga yozish</button>
+      <p>Bu jadvalni yaratgan muallif haqida ma'lumot.</p>
+      <button id="contact-btn">Muallif-ga yozish</button>
     </div>
   </div>
 
-  <!-- Modal for contacting author -->
-  <div id="contact-author-modal" class="modal">
+  <!-- Модальное окно "Muallif-ga yozish" -->
+  <div id="contact-modal" class="modal">
     <div class="modal-content">
-      <span id="close-contact-btn" class="close">&times;</span>
-      <h2>Muallifga yozish</h2>
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="name">Ismingiz:</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Telefon raqam:</label>
-          <input type="text" id="phone" required>
-        </div>
-        <div class="form-group">
-          <label for="telegram">Telegram:</label>
-          <input type="text" id="telegram" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Xabar:</label>
-          <textarea id="message" required></textarea>
-        </div>
-        <button type="submit" id="send-message-btn">Yuborish</button>
+      <span id="contact-close-btn" class="close">&times;</span>
+      <h2>Muallif-ga yozish</h2>
+      <form>
+        <label for="contact-name">Ismingiz:</label>
+        <input type="text" id="contact-name" placeholder="Ismingizni kiriting">
+
+        <label for="contact-phone">Telefon raqamingiz:</label>
+        <input type="text" id="contact-phone" placeholder="Telefon raqamingizni kiriting">
+
+        <label for="contact-telegram">Telegram:</label>
+        <input type="text" id="contact-telegram" placeholder="Telegram foydalanuvchi nomi">
+
+        <label for="contact-message">Xabar:</label>
+        <textarea id="contact-message" placeholder="Xabarni kiriting"></textarea>
+
+        <button type="button" id="send-message">Yuborish</button>
       </form>
     </div>
   </div>

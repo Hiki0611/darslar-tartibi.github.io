@@ -60,13 +60,12 @@ document.addEventListener("DOMContentLoaded", function() {
           const row = tableBody.insertRow();
           const noLessonsCell = row.insertCell(0);
           noLessonsCell.colSpan = 2;
-          noLessonsCell.textContent = "Уроков нет в этот день";
+          noLessonsCell.textContent = "Uroklar yo'q bu kunda";
         }
       })
       .catch(error => {
-        console.error('Ошибка загрузки расписания:', error);
-        alert('Ошибка загрузки расписания. Проверьте, что путь к файлу правильный.');
+        console.error('Xatolik yuz berdi:', error);
+        alert('Jadvalni yuklab olishda xatolik yuz berdi. Iltimos, fayl yo‘lini tekshirib ko‘ring.');
       });
   });
 });
-

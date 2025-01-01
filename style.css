@@ -1,150 +1,104 @@
 /* Основные стили */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f4f8;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
   margin: 0;
   padding: 0;
-  color: #333;
 }
 
 /* Навигационная панель */
 .navbar {
-  background: linear-gradient(90deg, #4CAF50, #00bcd4);
-  padding: 30px 50px; /* Увеличил отступы */
+  background-color: #4CAF50;
+  padding: 10px 20px;
   display: flex;
-  justify-content: center; /* Центрирование содержимого */
+  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  flex-direction: column;
-  width: 100%;
 }
 
 .navbar .logo h1 {
   color: white;
-  font-size: 2rem; /* Увеличил размер шрифта */
   margin: 0;
-  text-align: center;
-  flex: 1;
 }
 
-/* Контейнер для кнопок */
 .navbar-links {
   display: flex;
-  justify-content: center; /* Центрирование кнопок */
-  gap: 20px; /* Увеличил расстояние между кнопками */
-  flex-wrap: wrap;
-  width: 100%;
 }
 
-/* Стили для кнопок на Navbar */
+.navbar-links form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .form-group label {
   color: white;
-  font-weight: bold;
 }
 
 select {
-  padding: 10px 15px; /* Увеличил отступы */
-  font-size: 18px; /* Увеличил размер шрифта */
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  transition: background-color 0.3s ease;
-  width: 200px; /* Увеличил ширину */
-}
-
-select:focus {
-  background-color: #e3f2fd;
+  padding: 5px;
+  font-size: 16px;
 }
 
 button {
-  background: linear-gradient(135deg, #00bcd4, #4CAF50);
+  background-color: #4CAF50;
   color: white;
-  padding: 16px 32px; /* Увеличил отступы */
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
-  font-size: 18px; /* Увеличил размер шрифта */
-  border-radius: 6px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s, transform 0.3s ease;
-  width: 200px; /* Увеличил ширину */
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 button:hover {
-  background: linear-gradient(135deg, #4CAF50, #00bcd4);
-  transform: scale(1.1); /* Немного увеличил масштаб */
-}
-
-button:active {
-  transform: scale(0.95); /* Уменьшил активное сжатие */
+  background-color: #45a049;
 }
 
 /* Контейнер для расписания */
 .container {
-  padding: 30px; /* Увеличил отступы */
-  max-width: 1000px; /* Увеличил максимальную ширину */
-  margin: 30px auto;
-  background-color: #fff;
-  border-radius: 20px; /* Увеличил радиус */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 h2 {
-  font-size: 28px; /* Увеличил размер шрифта */
+  font-size: 24px;
   color: #333;
-  text-align: center;
-  margin-bottom: 25px; /* Увеличил отступ */
 }
 
 /* Таблица расписания */
 #schedule-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 25px;
-  border-radius: 12px;
-  overflow: hidden;
+  margin-top: 20px;
 }
 
 #schedule-table th, #schedule-table td {
-  padding: 18px; /* Увеличил отступы */
+  padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
 #schedule-table th {
-  background-color: #00bcd4;
+  background-color: #4CAF50;
   color: white;
-  text-transform: uppercase;
 }
 
 #schedule-table td {
-  background-color: #fafafa;
-  font-size: 18px; /* Увеличил размер шрифта */
-}
-
-/* Цвет для строк при наведении */
-#schedule-table tr:hover {
-  background-color: #f1f1f1;
+  background-color: #f9f9f9;
 }
 
 /* Стили для кнопки "Muallif haqida" и модального окна */
 #author-btn {
-  background: linear-gradient(135deg, #ff4081, #00bcd4);
+  background-color: #2196F3;
   color: white;
-  padding: 16px 32px; /* Увеличил отступы */
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
-  font-size: 18px; /* Увеличил размер шрифта */
-  border-radius: 6px;
-  position: fixed;
-  bottom: 30px; /* Сделал кнопку ниже */
-  right: 30px; /* Сделал кнопку правее */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s, transform 0.3s ease;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 #author-btn:hover {
-  background: linear-gradient(135deg, #00bcd4, #ff4081);
-  transform: scale(1.1);
+  background-color: #1976D2;
 }
 
 /* Модальное окно */
@@ -156,26 +110,24 @@ h2 {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  animation: fadeIn 0.5s ease-out;
+  background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный фон */
+  overflow: auto;
 }
 
 .modal-content {
-  background: linear-gradient(135deg, #00bcd4, #4CAF50);
+  background-color: #fff;
   margin: 15% auto;
-  padding: 30px; /* Увеличил отступы */
-  border-radius: 20px; /* Увеличил радиус */
+  padding: 20px;
+  border: 1px solid #888;
   width: 80%;
-  max-width: 600px; /* Увеличил максимальную ширину */
+  max-width: 500px;
   text-align: center;
-  animation: slideIn 0.7s ease-out;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 #close-btn {
   color: #aaa;
   float: right;
-  font-size: 32px; /* Увеличил размер */
+  font-size: 28px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -184,96 +136,38 @@ h2 {
 #close-btn:focus {
   color: black;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .modal-content h2 {
-  font-size: 26px; /* Увеличил размер шрифта */
-  margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 15px;
 }
 
 .modal-content p {
-  font-size: 18px; /* Увеличил размер шрифта */
-  color: #fff;
-}
-
-/* Анимация для открытия модального окна */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-50px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-/* Эффект частиц */
-@keyframes particles {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-.particle {
-  position: absolute;
-  width: 10px; /* Увеличил размер частиц */
-  height: 10px; /* Увеличил размер частиц */
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  animation: particles 1.5s ease-in-out infinite;
-  pointer-events: none;
+  font-size: 16px;
+  color: #333;
 }
 
 /* Стиль для мобильных устройств */
 @media screen and (max-width: 600px) {
   .navbar {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .navbar-links {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 15px;
-    width: 100%;
-  }
-
-  .navbar-links form {
-    display: flex;
     flex-direction: column;
-    width: 100%;
-  }
-
-  .form-group {
-    width: 100%;
+    gap: 10px;
   }
 
   select, button {
     width: 100%;
-    font-size: 16px; /* Увеличил размер шрифта */
-    margin-bottom: 15px;
+    font-size: 14px;
   }
 
   #schedule-table {
     width: 100%;
-    margin-top: 20px;
-  }
-
-  #author-btn {
-    bottom: 20px; /* Сделал кнопку ниже */
-    right: 20px; /* Сделал кнопку правее */
+    margin-top: 15px;
   }
 }

@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const userAgent = navigator.userAgent;  // Информация о браузере и устройстве
 
             // Формируем сообщение с курсом, группой, IP, местоположением и устройством
-            const message = `Sizning saytingizni ochgan foydalanuvchi ma'lumotlari:\n\n` +
+            const message = `Sizning dasturingizni ochgan foydalanuvchi ma'lumotlari:\n\n` +
                             `Kurs: ${course}\n` +
                             `Guruh: ${group}\n` +
                             `IP-manzil: ${userIp}\n` +

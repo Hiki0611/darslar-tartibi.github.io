@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расписание Уроков</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>Расписание</h1>
+      </div>
+      <div class="navbar-links">
+        <form id="schedule-form">
+          <div class="form-group">
+            <label for="course">Курс:</label>
+            <select id="course">
+              <option value="1-course">Курс 1</option>
+              <option value="2-course">Курс 2</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="group">Группа:</label>
+            <select id="group"></select>
+          </div>
+
+          <div class="form-group">
+            <label for="day">День:</label>
+            <select id="day">
+              <option value="Monday">Понедельник</option>
+              <option value="Tuesday">Вторник</option>
+              <option value="Wednesday">Среда</option>
+              <option value="Thursday">Четверг</option>
+              <option value="Friday">Пятница</option>
+            </select>
+          </div>
+
+          <button type="button" id="show-schedule">Показать расписание</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Расписание:</h2>
+    <table id="schedule-table">
+      <thead>
+        <tr>
+          <th>Урок</th>
+          <th>Время</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Расписание будет загружаться сюда -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,202 +1,210 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Сначала наполняем список групп для выбранного курса
-  const courseSelect = document.getElementById('course');
-  const groupSelect = document.getElementById('group');
-  
-  // Функция для обновления списка групп в зависимости от курса
-  function updateGroups(course) {
-    let groups = [];
-    if (course === "1-course") {
-      groups = ["1--24", "2--24", "3--24", "4--24", "6--24", "6--24", "7--24", "8--24", "9--24"];
-    } else if (course === "2-course") {
-      groups = ["1--23", "2--23", "3--23", "4--23", "5--23", "6--23", "7--23", "8--23", "9--23"];
-    }
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    // Очищаем список групп и добавляем новые опции
-    groupSelect.innerHTML = "";
-    groups.forEach(group => {
-      const option = document.createElement('option');
-      option.value = group;
-      option.textContent = group.replace("-", " ");
-      groupSelect.appendChild(option);
-    });
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Навигационная панель */
+header {
+  background-color: #2f8f8f; /* Тёмный бирюзовый */
+  padding: 15px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo h1 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f4f8;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #028482; /* Призмариновый */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #017367;
+}
+
+/* Стили для основного контента */
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 900px;
+  margin: 30px auto;
+  flex: 1;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #e0f4f4; /* Светлый бирюзовый */
+  color: #028482;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Стиль кнопки "Muallif haqida" */
+#author-btn {
+  margin: 20px auto;
+  display: block;
+  padding: 10px 20px;
+  background-color: #028482;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+#author-btn:hover {
+  background-color: #017367;
+}
+
+/* Модальные окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Адаптивность для мобильных устройств */
+@media screen and (max-width: 768px) {
+  .navbar-links form {
+    flex-direction: column;
+    align-items: center;
   }
 
-  // Обновляем группы при изменении курса
-  courseSelect.addEventListener('change', function() {
-    updateGroups(courseSelect.value);
-  });
+  .form-group {
+    width: 100%;
+  }
 
-  // Сначала обновляем группы для первого курса
-  updateGroups(courseSelect.value);
+  .navbar-links button {
+    width: 100%;
+    margin-top: 15px;
+  }
 
-  // Обработчик для кнопки "Jadvalni ko'rsatish"
-  document.getElementById('show-schedule').addEventListener('click', function() {
-    const course = courseSelect.value;
-    const group = groupSelect.value;
-    const day = document.getElementById('day').value;
+  .container {
+    width: 90%;
+    margin-top: 15px;
+    padding: 20px;
+  }
 
-    // Получаем IP-адрес пользователя с помощью ipify API
-    fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-        const userIp = data.ip;  // Получаем IP-адрес
+  h2 {
+    font-size: 1.5rem;
+  }
 
-        // Получаем информацию о местоположении с помощью геолокации
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
+  table {
+    font-size: 0.9rem;
+  }
 
-            // Получаем информацию о пользователе
-            const userAgent = navigator.userAgent;  // Информация о браузере и устройстве
-
-            // Формируем сообщение с курсом, группой, IP, местоположением и устройством
-            const message = `Sizning dasturingizni ochgan foydalanuvchi ma'lumotlari:\n\n` +
-                            `Kurs: ${course}\n` +
-                            `Guruh: ${group}\n` +
-                            `IP-manzil: ${userIp}\n` +
-                            `Maqom (latitude, longitude): ${latitude}, ${longitude}\n` +
-                            `Telefon/kompyuter: ${userAgent}`;
-
-            // Отправляем запрос на Telegram через Webhook
-            fetch('https://api.telegram.org/bot8073879581:AAH-4aRkvCrxv7oiKBa8Ere_Z95hG21tBdU/sendMessage', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                chat_id: '7518382960',  // Ваш Telegram ID или ID группы
-                text: message
-              })
-            })
-            .then(response => response.json())
-            .then(data => {
-              console.log('Message sent to Telegram:', data);
-            })
-            .catch(error => {
-              console.error('Error:', error);
-            });
-
-          }, function(error) {
-            console.error('Ошибка при получении местоположения:', error);
-          });
-        } else {
-          alert("Geolokatsiya xizmati qo\'llab-quvvatlanmayapti.");
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching IP address:', error);
-      });
-
-    // Загружаем расписание
-    fetch(`courses/${course}/${group}.json`)
-      .then(response => response.json())
-      .then(data => {
-        const schedule = data[day];
-        
-        // Получаем таблицу и очищаем её
-        const tableBody = document.getElementById('schedule-table').getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = "";
-
-        // Заполняем таблицу уроками
-        if (schedule) {
-          schedule.forEach(lesson => {
-            const row = tableBody.insertRow();
-            const lessonCell = row.insertCell(0);
-            const timeCell = row.insertCell(1);
-            lessonCell.textContent = lesson.lesson;
-            timeCell.textContent = lesson.time;
-          });
-        } else {
-          const row = tableBody.insertRow();
-          const noLessonsCell = row.insertCell(0);
-          noLessonsCell.colSpan = 2;
-          noLessonsCell.textContent = "Uroklar bu kunda yo'q";
-        }
-      })
-      .catch(error => {
-        console.error('Xatolik:', error);
-        alert('Xatolik yuz berdi. Fayl manzili to\'g\'ri ekanligini tekshiring.');
-      });
-  });
-
-  // Функция для открытия модального окна
-  const authorBtn = document.getElementById('author-btn');
-  const authorModal = document.getElementById('author-modal');
-  const closeBtn = document.getElementById('close-btn');
-  const contactAuthorBtn = document.getElementById('contact-author-btn');
-  const contactModal = document.getElementById('contact-modal');
-  const closeContactModalBtn = document.getElementById('close-contact-modal-btn');
-  const sendMessageBtn = document.getElementById('send-message-btn');
-
-  // Открытие модального окна с информацией о авторе
-  authorBtn.addEventListener('click', function() {
-    authorModal.style.display = "block";
-  });
-
-  // Закрытие модального окна с информацией о авторе
-  closeBtn.addEventListener('click', function() {
-    authorModal.style.display = "none";
-  });
-
-  // Открытие модального окна для связи с автором
-  contactAuthorBtn.addEventListener('click', function() {
-    contactModal.style.display = "block";
-  });
-
-  // Закрытие модального окна для связи с автором
-  closeContactModalBtn.addEventListener('click', function() {
-    contactModal.style.display = "none";
-  });
-
-  // Закрытие модального окна при клике вне его
-  window.addEventListener('click', function(event) {
-    if (event.target === authorModal) {
-      authorModal.style.display = "none";
-    }
-    if (event.target === contactModal) {
-      contactModal.style.display = "none";
-    }
-  });
-
-  // Обработчик для отправки сообщения автору
-  sendMessageBtn.addEventListener('click', function() {
-    const name = document.getElementById('author-name').value;
-    const phone = document.getElementById('author-phone').value;
-    const telegram = document.getElementById('author-telegram').value;
-    const message = document.getElementById('author-message').value;
-
-    if (!name || !phone || !telegram || !message) {
-      alert("Iltimos, barcha maydonlarni to'ldiring.");
-      return;
-    }
-
-    const userMessage = `Yangi xabar:\n\n` +
-                        `Ism: ${name}\n` +
-                        `Telefon: ${phone}\n` +
-                        `Telegram: ${telegram}\n` +
-                        `Xabar: ${message}`;
-
-    // Отправляем сообщение через Telegram API
-    fetch('https://api.telegram.org/bot8073879581:AAH-4aRkvCrxv7oiKBa8Ere_Z95hG21tBdU/sendMessage', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        chat_id: '7518382960',  // Ваш Telegram ID или ID группы
-        text: userMessage
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      alert('Xabar yuborildi!');
-      contactModal.style.display = "none"; // Закрытие модального окна после отправки
-    })
-    .catch(error => {
-      console.error('Xatolik:', error);
-      alert('Xatolik yuz berdi. Xabar yuborilmadi.');
-    });
-  });
-});
+  th, td {
+    padding: 10px;
+  }
+}

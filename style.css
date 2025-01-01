@@ -1,22 +1,25 @@
 /* Основные стили */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
 /* Навигационная панель */
 .navbar {
-  background-color: #4CAF50;
-  padding: 10px 20px;
+  background: linear-gradient(90deg, #4CAF50, #00bcd4);
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo h1 {
   color: white;
+  font-size: 1.8rem;
   margin: 0;
 }
 
@@ -32,35 +35,56 @@ body {
 
 .form-group label {
   color: white;
+  font-weight: bold;
 }
 
 select {
-  padding: 5px;
+  padding: 8px 12px;
   font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+select:focus {
+  background-color: #e3f2fd;
 }
 
 button {
-  background-color: #4CAF50;
+  background: linear-gradient(135deg, #00bcd4, #4CAF50);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background: linear-gradient(135deg, #4CAF50, #00bcd4);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 /* Контейнер для расписания */
 .container {
   padding: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 26px;
   color: #333;
+  text-align: center;
 }
 
 /* Таблица расписания */
@@ -71,34 +95,38 @@ h2 {
 }
 
 #schedule-table th, #schedule-table td {
-  padding: 10px;
+  padding: 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
 #schedule-table th {
-  background-color: #4CAF50;
+  background-color: #00bcd4;
   color: white;
+  text-transform: uppercase;
 }
 
 #schedule-table td {
-  background-color: #f9f9f9;
+  background-color: #fafafa;
+  font-size: 16px;
 }
 
 /* Стили для кнопки "Muallif haqida" и модального окна */
 #author-btn {
-  background-color: #2196F3;
+  background: linear-gradient(135deg, #ff4081, #00bcd4);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
   margin-top: 20px;
+  transition: background 0.3s, transform 0.3s ease;
 }
 
 #author-btn:hover {
-  background-color: #1976D2;
+  background: linear-gradient(135deg, #00bcd4, #ff4081);
+  transform: scale(1.05);
 }
 
 /* Модальное окно */
@@ -110,18 +138,20 @@ h2 {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный фон */
-  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.5s ease-out;
 }
 
 .modal-content {
   background-color: #fff;
   margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
+  padding: 25px;
+  border-radius: 10px;
   width: 80%;
   max-width: 500px;
   text-align: center;
+  animation: slideIn 0.7s ease-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #close-btn {
@@ -136,17 +166,57 @@ h2 {
 #close-btn:focus {
   color: black;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .modal-content h2 {
-  font-size: 22px;
+  font-size: 24px;
   margin-bottom: 15px;
 }
 
 .modal-content p {
   font-size: 16px;
   color: #333;
+}
+
+/* Анимация для открытия модального окна */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Эффект частиц */
+@keyframes particles {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: particles 1.5s ease-in-out infinite;
+  pointer-events: none;
 }
 
 /* Стиль для мобильных устройств */

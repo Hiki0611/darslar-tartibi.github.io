@@ -16,6 +16,8 @@ body {
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  flex-direction: column;
+  width: 100%;
 }
 
 .navbar .logo h1 {
@@ -29,10 +31,10 @@ body {
 /* Контейнер для кнопок */
 .navbar-links {
   display: flex;
-  justify-content: center; /* Центрирование кнопок */
-  gap: 20px;
+  justify-content: space-between;
+  gap: 10px;
   flex-wrap: wrap;
-  text-align: center;
+  width: 100%;
 }
 
 /* Стили для кнопок на Navbar */
@@ -47,6 +49,7 @@ select {
   border-radius: 5px;
   border: 1px solid #ddd;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 select:focus {
@@ -63,7 +66,9 @@ button {
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.3s ease;
-  width: 45%;
+  width: 100%;
+  text-align: left;  /* Текст по левому краю */
+  padding-left: 20px;  /* Отступ для текста */
 }
 
 button:hover {
@@ -259,7 +264,7 @@ h2 {
   }
 
   select, button {
-    width: 45%;
+    width: 100%;
     font-size: 14px;
     margin-bottom: 10px;
   }

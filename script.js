@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", function() {
       groups = ["1--23", "2--23", "3--23", "4--23", "5--23"];
     }
 
-    groupSelect.innerHTML = "";
+    groupSelect.innerHTML = ""; // Очистить список групп
     groups.forEach(group => {
       const option = document.createElement('option');
       option.value = group;
-      option.textContent = group.replace("--", " ");
+      option.textContent = group.replace("--", " "); // Заменить '--' на пробел в отображении
       groupSelect.appendChild(option);
     });
   }

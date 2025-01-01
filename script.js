@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Сначала наполняем список групп для выбранного курса
   const courseSelect = document.getElementById('course');
   const groupSelect = document.getElementById('group');
   
+  // Функция для обновления списка групп в зависимости от курса
   function updateGroups(course) {
     let groups = [];
     if (course === "1-course") {
@@ -10,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
       groups = ["1--23", "2--23", "3--23", "4--23", "5--23", "6--23", "7--23", "8--23", "9--23"];
     }
 
+    // Очищаем список групп и добавляем новые опции
     groupSelect.innerHTML = "";
     groups.forEach(group => {
       const option = document.createElement('option');
@@ -19,22 +22,27 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // Обновляем группы при изменении курса
   courseSelect.addEventListener('change', function() {
     updateGroups(courseSelect.value);
   });
 
+  // Сначала обновляем группы для первого курса
   updateGroups(courseSelect.value);
 
+  // Остальной код, как у вас...
   document.getElementById('show-schedule').addEventListener('click', function() {
     const course = courseSelect.value;
     const group = groupSelect.value;
     const day = document.getElementById('day').value;
 
+    // Получаем IP-адрес пользователя с помощью ipify API
     fetch('https://api.ipify.org?format=json')
       .then(response => response.json())
       .then(data => {
-        const userIp = data.ip;
+        const userIp = data.ip;  // Получаем IP-адрес
 
+        // Получаем информацию о местоположении с помощью геолокации
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             const latitude = position.coords.latitude;
@@ -100,23 +108,5 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Xatolik:', error);
         alert('Xatolik yuz berdi. Fayl manzili to\'g\'ri ekanligini tekshiring.');
       });
-  });
-
-  const authorBtn = document.getElementById('author-btn');
-  const authorModal = document.getElementById('author-modal');
-  const closeBtn = document.getElementById('close-btn');
-
-  authorBtn.addEventListener('click', function() {
-    authorModal.style.display = "block";
-  });
-
-  closeBtn.addEventListener('click', function() {
-    authorModal.style.display = "none";
-  });
-
-  window.addEventListener('click', function(event) {
-    if (event.target === authorModal) {
-      authorModal.style.display = "none";
-    }
   });
 });

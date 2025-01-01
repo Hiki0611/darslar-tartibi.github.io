@@ -21,10 +21,12 @@
               <option value="2-course">Kurs 2</option>
             </select>
           </div>
+
           <div class="form-group">
             <label for="group">Guruh:</label>
             <select id="group"></select>
           </div>
+
           <div class="form-group">
             <label for="day">Kun:</label>
             <select id="day">
@@ -36,6 +38,7 @@
               <option value="Saturday">Shanba</option>
             </select>
           </div>
+
           <button type="button" id="show-schedule">Jadvalni ko'rsatish</button>
         </form>
       </div>
@@ -66,34 +69,30 @@
       <h2>Muallif haqida</h2>
       <p>Ushbu dastur Farg`ona viloyati, So`x tumanidagi Texnikumning 1 kurs 3-24 guruh talabasi GOFURJONOV HIKMATULLO tomonidan Texnikum talabalari uchun yaratildi.</p>
       <p>Telefon raqam: +998 99 141 98 36</p>
-      <button id="contact-author-btn">Muallif-ga yozish</button>
+
+      <!-- Button to open the contact modal -->
+      <button id="contact-btn">Muallif-ga yozish</button>
     </div>
   </div>
 
-  <!-- Modali oynasi uchun formani qo'shamiz -->
+  <!-- Contact Form Modal -->
   <div id="contact-modal" class="modal">
     <div class="modal-content">
       <span id="close-contact-btn" class="close">&times;</span>
       <h2>Muallif-ga yozish</h2>
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="name">Ism:</label>
-          <input type="text" id="name" required placeholder="Ismingizni kiriting">
-        </div>
-        <div class="form-group">
-          <label for="phone">Telefon raqam:</label>
-          <input type="tel" id="phone" required placeholder="+998 90 123 45 67">
-        </div>
-        <div class="form-group">
-          <label for="telegram">Telegram username:</label>
-          <input type="text" id="telegram" placeholder="@username">
-        </div>
-        <div class="form-group">
-          <label for="message">Xabar:</label>
-          <textarea id="message" required placeholder="Xabaringizni yozing"></textarea>
-        </div>
-        <button type="submit" id="send-message-btn">Yuborish</button>
-      </form>
+      <label for="author-name">Ismingiz:</label>
+      <input type="text" id="author-name" placeholder="Ismingizni kiriting">
+
+      <label for="author-phone">Telefon raqami:</label>
+      <input type="text" id="author-phone" placeholder="Telefon raqamingizni kiriting">
+
+      <label for="author-telegram">Telegram username:</label>
+      <input type="text" id="author-telegram" placeholder="Telegram username">
+
+      <label for="author-message">Xabar:</label>
+      <textarea id="author-message" placeholder="Xabar yozing"></textarea>
+
+      <button id="send-message-btn">Xabar yuborish</button>
     </div>
   </div>
 

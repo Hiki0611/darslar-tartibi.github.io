@@ -14,16 +14,16 @@ document.addEventListener("DOMContentLoaded", function() {
   function updateGroups(course) {
     let groups = [];
     if (course === "1-course") {
-      groups = ["1-24", "2-24", "3-24", "4-24", "5-24", "6-24"];
+      groups = ["1--24", "2--24", "3--24", "4--24", "5--24", "6--24"];
     } else if (course === "2-course") {
-      groups = ["1-23", "2-23", "3-23", "4-23", "5-23"];
+      groups = ["1--23", "2--23", "3--23", "4--23", "5--23"];
     }
 
     groupSelect.innerHTML = "";
     groups.forEach(group => {
       const option = document.createElement('option');
       option.value = group;
-      option.textContent = group.replace("-", " ");
+      option.textContent = group.replace("--", " ");
       groupSelect.appendChild(option);
     });
   }

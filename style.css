@@ -21,19 +21,29 @@ body {
   color: white;
   font-size: 1.8rem;
   margin: 0;
+  text-align: center;
+  flex: 1;
 }
 
+/* Контейнер для кнопок */
 .navbar-links {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 60%; /* Даем пространство для кнопок */
 }
 
+/* Контейнер для формы */
 .navbar-links form {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
 }
 
+/* Стили для кнопок на Navbar */
 .form-group label {
   color: white;
   font-weight: bold;
@@ -61,6 +71,8 @@ button {
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.3s ease;
+  flex: 1;
+  margin: 5px;
 }
 
 button:hover {
@@ -227,12 +239,13 @@ h2 {
 @media screen and (max-width: 600px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .navbar-links {
     flex-direction: column;
     gap: 10px;
+    width: 100%;
   }
 
   .navbar-links form {

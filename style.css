@@ -12,7 +12,7 @@ body {
   background: linear-gradient(90deg, #4CAF50, #00bcd4);
   padding: 20px 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Центрирование содержимого */
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -29,10 +29,10 @@ body {
 /* Контейнер для кнопок */
 .navbar-links {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center; /* Центрирование кнопок */
   gap: 20px;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 /* Стили для кнопок на Navbar */

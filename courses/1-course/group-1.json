@@ -1,33 +1,31 @@
 {
   "Monday": [
-    { "lesson": "Математика", "time": "08:30 - 09:45" },
-    { "lesson": "Физика", "time": "10:00 - 11:15" },
-    { "lesson": "Информатика", "time": "11:30 - 12:45" },
-    { "lesson": "Английский язык", "time": "13:00 - 14:15" }
+    { "lesson": "Matematika", "time": "09:00 - 10:30" },
+    { "lesson": "Fizika", "time": "10:45 - 12:15" },
+    { "lesson": "Ingliz tili", "time": "13:00 - 14:30" },
+    { "lesson": "Kimyo", "time": "14:45 - 16:15" }
   ],
   "Tuesday": [
-    { "lesson": "История", "time": "08:30 - 09:45" },
-    { "lesson": "Химия", "time": "10:00 - 11:15" },
-    { "lesson": "Экономика", "time": "11:30 - 12:45" },
-    { "lesson": "Физкультура", "time": "13:00 - 14:15" }
+    { "lesson": "Informatika", "time": "09:00 - 10:30" },
+    { "lesson": "Biologiya", "time": "10:45 - 12:15" },
+    { "lesson": "Matematika", "time": "13:00 - 14:30" }
   ],
   "Wednesday": [
-    { "lesson": "Математика", "time": "08:30 - 09:45" },
-    { "lesson": "Информатика", "time": "10:00 - 11:15" },
-    { "lesson": "Английский язык", "time": "11:30 - 12:45" },
-    { "lesson": "Физика", "time": "13:00 - 14:15" }
+    { "lesson": "Fizika", "time": "09:00 - 10:30" },
+    { "lesson": "Kimyo", "time": "10:45 - 12:15" },
+    { "lesson": "Ingliz tili", "time": "13:00 - 14:30" }
   ],
   "Thursday": [
-    { "lesson": "Химия", "time": "08:30 - 09:45" },
-    { "lesson": "История", "time": "10:00 - 11:15" },
-    { "lesson": "Экономика", "time": "11:30 - 12:45" },
-    { "lesson": "Физкультура", "time": "13:00 - 14:15" }
+    { "lesson": "Matematika", "time": "09:00 - 10:30" },
+    { "lesson": "Informatika", "time": "10:45 - 12:15" },
+    { "lesson": "Biologiya", "time": "13:00 - 14:30" }
   ],
   "Friday": [
-    { "lesson": "Математика", "time": "08:30 - 09:45" },
-    { "lesson": "Физика", "time": "10:00 - 11:15" },
-    { "lesson": "Информатика", "time": "11:30 - 12:45" },
-    { "lesson": "Английский язык", "time": "13:00 - 14:15" }
+    { "lesson": "Fizika", "time": "09:00 - 10:30" },
+    { "lesson": "Kimyo", "time": "10:45 - 12:15" }
+  ],
+  "Saturday": [
+    { "lesson": "Matematika", "time": "09:00 - 10:30" },
+    { "lesson": "Ingliz tili", "time": "10:45 - 12:15" }
   ]
 }
-

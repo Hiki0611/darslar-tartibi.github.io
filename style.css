@@ -81,7 +81,7 @@ button:active {
   max-width: 900px;
   margin: 30px auto;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 15px;  /* Увеличил скругление */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -89,6 +89,7 @@ h2 {
   font-size: 26px;
   color: #333;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 /* Таблица расписания */
@@ -96,6 +97,8 @@ h2 {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  border-radius: 10px;  /* Скругление для таблицы */
+  overflow: hidden;
 }
 
 #schedule-table th, #schedule-table td {
@@ -113,6 +116,11 @@ h2 {
 #schedule-table td {
   background-color: #fafafa;
   font-size: 16px;
+}
+
+/* Цвет для строк при наведении */
+#schedule-table tr:hover {
+  background-color: #f1f1f1;
 }
 
 /* Стили для кнопки "Muallif haqida" и модального окна */
@@ -150,10 +158,10 @@ h2 {
 }
 
 .modal-content {
-  background-color: #fff;
+  background: linear-gradient(135deg, #00bcd4, #4CAF50);  /* Градиент для окна */
   margin: 15% auto;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 80%;
   max-width: 500px;
   text-align: center;
@@ -182,7 +190,7 @@ h2 {
 
 .modal-content p {
   font-size: 16px;
-  color: #333;
+  color: #fff;  /* Белый цвет текста */
 }
 
 /* Анимация для открытия модального окна */

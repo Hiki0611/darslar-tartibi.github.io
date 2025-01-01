@@ -138,7 +138,7 @@ tbody tr:hover {
   background-color: #017367;
 }
 
-/* Модальное окно "Muallif haqida" */
+/* Модальное окно */
 .modal {
   display: none; /* Скрыть модальное окно по умолчанию */
   position: fixed;
@@ -172,44 +172,6 @@ tbody tr:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-/* Стиль для модального окна "Muallif-ga yozish" */
-#contact-modal {
-  display: none; /* Скрыть модальное окно по умолчанию */
-}
-
-#contact-modal .modal-content {
-  width: 80%;
-  max-width: 600px;
-}
-
-#contact-modal form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-#contact-modal input,
-#contact-modal textarea {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-#contact-modal button {
-  padding: 10px 20px;
-  background-color: #028482;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#contact-modal button:hover {
-  background-color: #017367;
 }
 
 /* Адаптивность для мобильных устройств */

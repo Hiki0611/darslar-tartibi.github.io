@@ -10,11 +10,12 @@ body {
 /* Навигационная панель */
 .navbar {
   background: linear-gradient(90deg, #4CAF50, #00bcd4);
-  padding: 15px 20px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .navbar .logo h1 {
@@ -28,10 +29,10 @@ body {
 /* Контейнер для кнопок */
 .navbar-links {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 15px;
-  width: 60%;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 /* Стили для кнопок на Navbar */
@@ -62,8 +63,7 @@ button {
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.3s ease;
-  width: 45%;  /* Кнопки будут занимать 45% ширины контейнера, создавая два ряда */
-  margin: 5px;
+  width: 45%;
 }
 
 button:hover {
@@ -81,7 +81,7 @@ button:active {
   max-width: 900px;
   margin: 30px auto;
   background-color: #fff;
-  border-radius: 15px;  /* Увеличил скругление */
+  border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -97,7 +97,7 @@ h2 {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  border-radius: 10px;  /* Скругление для таблицы */
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -158,7 +158,7 @@ h2 {
 }
 
 .modal-content {
-  background: linear-gradient(135deg, #00bcd4, #4CAF50);  /* Градиент для окна */
+  background: linear-gradient(135deg, #00bcd4, #4CAF50);
   margin: 15% auto;
   padding: 25px;
   border-radius: 15px;
@@ -190,7 +190,7 @@ h2 {
 
 .modal-content p {
   font-size: 16px;
-  color: #fff;  /* Белый цвет текста */
+  color: #fff;
 }
 
 /* Анимация для открытия модального окна */

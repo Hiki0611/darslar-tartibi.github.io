@@ -1,63 +1,74 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Расписание Уроков</title>
+  <title>Soat Jadvali</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
-        <h1>Расписание</h1>
+        <h1>Soat Jadvali</h1>
       </div>
       <div class="navbar-links">
         <form id="schedule-form">
           <div class="form-group">
-            <label for="course">Курс:</label>
+            <label for="course">Kurs:</label>
             <select id="course">
-              <option value="1-course">Курс 1</option>
-              <option value="2-course">Курс 2</option>
+              <option value="1-course">1-Kurs</option>
+              <option value="2-course">2-Kurs</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="group">Группа:</label>
+            <label for="group">Guruhi:</label>
             <select id="group"></select>
           </div>
 
           <div class="form-group">
-            <label for="day">День:</label>
+            <label for="day">Kun:</label>
             <select id="day">
-              <option value="Monday">Понедельник</option>
-              <option value="Tuesday">Вторник</option>
-              <option value="Wednesday">Среда</option>
-              <option value="Thursday">Четверг</option>
-              <option value="Friday">Пятница</option>
+              <option value="Monday">Dushanba</option>
+              <option value="Tuesday">Seshanba</option>
+              <option value="Wednesday">Chorshanba</option>
+              <option value="Thursday">Payshanba</option>
+              <option value="Friday">Juma</option>
+              <option value="Saturday">Shanba</option>
             </select>
           </div>
 
-          <button type="button" id="show-schedule">Показать расписание</button>
+          <button type="button" id="show-schedule">Jadvalni ko'rsatish</button>
         </form>
       </div>
     </nav>
   </header>
 
   <div class="container">
-    <h2>Расписание:</h2>
+    <h2>Jadval:</h2>
     <table id="schedule-table">
       <thead>
         <tr>
-          <th>Урок</th>
-          <th>Время</th>
+          <th>Soat</th>
+          <th>Vaqt</th>
         </tr>
       </thead>
       <tbody>
-        <!-- Расписание будет загружаться сюда -->
+        <!-- Jadval shu yerga yuklanadi -->
       </tbody>
     </table>
   </div>
+
+  <div class="modal" id="about-author-modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal-btn">&times;</span>
+      <h2>Muallif haqida</h2>
+      <p>Ushbu saytni yaratgan muallif haqida ma'lumotlar.</p>
+    </div>
+  </div>
+
+  <button id="about-author-btn" class="about-author-btn">Muallif haqida</button>
 
   <script src="script.js"></script>
 </body>

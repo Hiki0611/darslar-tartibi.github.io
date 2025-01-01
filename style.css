@@ -10,7 +10,7 @@ body {
 /* Навигационная панель */
 .navbar {
   background: linear-gradient(90deg, #4CAF50, #00bcd4);
-  padding: 20px 40px;
+  padding: 30px 50px; /* Увеличил отступы */
   display: flex;
   justify-content: center; /* Центрирование содержимого */
   align-items: center;
@@ -22,7 +22,7 @@ body {
 
 .navbar .logo h1 {
   color: white;
-  font-size: 1.8rem;
+  font-size: 2rem; /* Увеличил размер шрифта */
   margin: 0;
   text-align: center;
   flex: 1;
@@ -32,7 +32,7 @@ body {
 .navbar-links {
   display: flex;
   justify-content: center; /* Центрирование кнопок */
-  gap: 20px;
+  gap: 20px; /* Увеличил расстояние между кнопками */
   flex-wrap: wrap;
   width: 100%;
 }
@@ -44,12 +44,12 @@ body {
 }
 
 select {
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 5px;
+  padding: 10px 15px; /* Увеличил отступы */
+  font-size: 18px; /* Увеличил размер шрифта */
+  border-radius: 6px;
   border: 1px solid #ddd;
   transition: background-color 0.3s ease;
-  width: 200px; /* Уменьшил ширину кнопок */
+  width: 200px; /* Увеличил ширину */
 }
 
 select:focus {
@@ -59,53 +59,53 @@ select:focus {
 button {
   background: linear-gradient(135deg, #00bcd4, #4CAF50);
   color: white;
-  padding: 12px 24px;
+  padding: 16px 32px; /* Увеличил отступы */
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 18px; /* Увеличил размер шрифта */
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.3s ease;
-  width: 200px; /* Уменьшил ширину кнопок */
+  width: 200px; /* Увеличил ширину */
 }
 
 button:hover {
   background: linear-gradient(135deg, #4CAF50, #00bcd4);
-  transform: scale(1.05);
+  transform: scale(1.1); /* Немного увеличил масштаб */
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.95); /* Уменьшил активное сжатие */
 }
 
 /* Контейнер для расписания */
 .container {
-  padding: 20px;
-  max-width: 900px;
+  padding: 30px; /* Увеличил отступы */
+  max-width: 1000px; /* Увеличил максимальную ширину */
   margin: 30px auto;
   background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 20px; /* Увеличил радиус */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 28px; /* Увеличил размер шрифта */
   color: #333;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px; /* Увеличил отступ */
 }
 
 /* Таблица расписания */
 #schedule-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  border-radius: 10px;
+  margin-top: 25px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
 #schedule-table th, #schedule-table td {
-  padding: 15px;
+  padding: 18px; /* Увеличил отступы */
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
@@ -118,7 +118,7 @@ h2 {
 
 #schedule-table td {
   background-color: #fafafa;
-  font-size: 16px;
+  font-size: 18px; /* Увеличил размер шрифта */
 }
 
 /* Цвет для строк при наведении */
@@ -130,21 +130,21 @@ h2 {
 #author-btn {
   background: linear-gradient(135deg, #ff4081, #00bcd4);
   color: white;
-  padding: 8px 16px; /* Сделал кнопку меньше */
+  padding: 16px 32px; /* Увеличил отступы */
   border: none;
   cursor: pointer;
-  font-size: 14px; /* Меньше шрифт */
-  border-radius: 5px;
+  font-size: 18px; /* Увеличил размер шрифта */
+  border-radius: 6px;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  bottom: 30px; /* Сделал кнопку ниже */
+  right: 30px; /* Сделал кнопку правее */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   transition: background 0.3s, transform 0.3s ease;
 }
 
 #author-btn:hover {
   background: linear-gradient(135deg, #00bcd4, #ff4081);
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 /* Модальное окно */
@@ -163,19 +163,19 @@ h2 {
 .modal-content {
   background: linear-gradient(135deg, #00bcd4, #4CAF50);
   margin: 15% auto;
-  padding: 25px;
-  border-radius: 15px;
+  padding: 30px; /* Увеличил отступы */
+  border-radius: 20px; /* Увеличил радиус */
   width: 80%;
-  max-width: 500px;
+  max-width: 600px; /* Увеличил максимальную ширину */
   text-align: center;
   animation: slideIn 0.7s ease-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 #close-btn {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 32px; /* Увеличил размер */
   font-weight: bold;
   cursor: pointer;
 }
@@ -187,12 +187,12 @@ h2 {
 }
 
 .modal-content h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 26px; /* Увеличил размер шрифта */
+  margin-bottom: 20px;
 }
 
 .modal-content p {
-  font-size: 16px;
+  font-size: 18px; /* Увеличил размер шрифта */
   color: #fff;
 }
 
@@ -229,8 +229,8 @@ h2 {
 
 .particle {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 10px; /* Увеличил размер частиц */
+  height: 10px; /* Увеличил размер частиц */
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   animation: particles 1.5s ease-in-out infinite;
@@ -263,17 +263,17 @@ h2 {
 
   select, button {
     width: 100%;
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: 16px; /* Увеличил размер шрифта */
+    margin-bottom: 15px;
   }
 
   #schedule-table {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 20px;
   }
 
   #author-btn {
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px; /* Сделал кнопку ниже */
+    right: 20px; /* Сделал кнопку правее */
   }
 }

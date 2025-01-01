@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function updateGroups(course) {
     let groups = [];
     if (course === "1-course") {
-      groups = ["1--24", "2--24", "3--24", "4--24", "6--24", "6--24", "7--24", "8--24", "9--24", "10--24"];
+      groups = ["1--24", "2--24", "3--24", "4--24", "6--24", "6--24", "7--24", "8--24", "9--24"];
     } else if (course === "2-course") {
       groups = ["1--23", "2--23", "3--23", "4--23", "5--23", "6--23", "7--23", "8--23", "9--23", "10--23"];
     }

@@ -25,6 +25,7 @@ body {
 
 .navbar-links {
   display: flex;
+  gap: 20px;
 }
 
 .navbar-links form {
@@ -120,7 +121,10 @@ h2 {
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
-  margin-top: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: background 0.3s, transform 0.3s ease;
 }
 
@@ -231,13 +235,29 @@ h2 {
     gap: 10px;
   }
 
+  .navbar-links form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
   select, button {
     width: 100%;
     font-size: 14px;
+    margin-bottom: 10px;
   }
 
   #schedule-table {
     width: 100%;
     margin-top: 15px;
+  }
+
+  #author-btn {
+    bottom: 10px;
+    right: 10px;
   }
 }

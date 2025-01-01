@@ -125,15 +125,29 @@ document.addEventListener("DOMContentLoaded", function() {
   const authorBtn = document.getElementById('author-btn');
   const authorModal = document.getElementById('author-modal');
   const closeBtn = document.getElementById('close-btn');
+  const contactAuthorBtn = document.getElementById('contact-author-btn');
+  const contactModal = document.getElementById('contact-modal');
+  const closeContactModalBtn = document.getElementById('close-contact-modal-btn');
+  const sendMessageBtn = document.getElementById('send-message-btn');
 
-  // Открытие модального окна
+  // Открытие модального окна с информацией о авторе
   authorBtn.addEventListener('click', function() {
     authorModal.style.display = "block";
   });
 
-  // Закрытие модального окна
+  // Закрытие модального окна с информацией о авторе
   closeBtn.addEventListener('click', function() {
     authorModal.style.display = "none";
+  });
+
+  // Открытие модального окна для связи с автором
+  contactAuthorBtn.addEventListener('click', function() {
+    contactModal.style.display = "block";
+  });
+
+  // Закрытие модального окна для связи с автором
+  closeContactModalBtn.addEventListener('click', function() {
+    contactModal.style.display = "none";
   });
 
   // Закрытие модального окна при клике вне его
@@ -141,5 +155,48 @@ document.addEventListener("DOMContentLoaded", function() {
     if (event.target === authorModal) {
       authorModal.style.display = "none";
     }
+    if (event.target === contactModal) {
+      contactModal.style.display = "none";
+    }
+  });
+
+  // Обработчик для отправки сообщения автору
+  sendMessageBtn.addEventListener('click', function() {
+    const name = document.getElementById('author-name').value;
+    const phone = document.getElementById('author-phone').value;
+    const telegram = document.getElementById('author-telegram').value;
+    const message = document.getElementById('author-message').value;
+
+    if (!name || !phone || !telegram || !message) {
+      alert("Iltimos, barcha maydonlarni to'ldiring.");
+      return;
+    }
+
+    const userMessage = `Yangi xabar:\n\n` +
+                        `Ism: ${name}\n` +
+                        `Telefon: ${phone}\n` +
+                        `Telegram: ${telegram}\n` +
+                        `Xabar: ${message}`;
+
+    // Отправляем сообщение через Telegram API
+    fetch('https://api.telegram.org/bot8073879581:AAH-4aRkvCrxv7oiKBa8Ere_Z95hG21tBdU/sendMessage', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: '7518382960',  // Ваш Telegram ID или ID группы
+        text: userMessage
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert('Xabar yuborildi!');
+      contactModal.style.display = "none"; // Закрытие модального окна после отправки
+    })
+    .catch(error => {
+      console.error('Xatolik:', error);
+      alert('Xatolik yuz berdi. Xabar yuborilmadi.');
+    });
   });
 });

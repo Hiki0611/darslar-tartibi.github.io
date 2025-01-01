@@ -28,19 +28,10 @@ body {
 /* Контейнер для кнопок */
 .navbar-links {
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-  width: 60%; /* Даем пространство для кнопок */
-}
-
-/* Контейнер для формы */
-.navbar-links form {
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 15px;
-  width: 100%;
+  width: 60%;
 }
 
 /* Стили для кнопок на Navbar */
@@ -71,7 +62,7 @@ button {
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background 0.3s, transform 0.3s ease;
-  flex: 1;
+  width: 45%;  /* Кнопки будут занимать 45% ширины контейнера, создавая два ряда */
   margin: 5px;
 }
 
@@ -243,8 +234,9 @@ h2 {
   }
 
   .navbar-links {
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
     width: 100%;
   }
 
@@ -259,7 +251,7 @@ h2 {
   }
 
   select, button {
-    width: 100%;
+    width: 45%;
     font-size: 14px;
     margin-bottom: 10px;
   }

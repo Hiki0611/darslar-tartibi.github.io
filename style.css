@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
+  background-color: #f0f8ff; /* Светлый фон */
   color: #333;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ body {
 
 /* Навигационная панель */
 header {
-  background-color: #007bff;
+  background-color: #006d77; /* Призмариновый цвет */
   padding: 15px;
 }
 
@@ -58,13 +58,13 @@ select {
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #f0f4f8;
+  background-color: #e0f7fa; /* Цвет селектора */
 }
 
 button {
   padding: 10px 20px;
   font-size: 1.2rem;
-  background-color: #28a745;
+  background-color: #0288d1; /* Синий цвет */
   color: white;
   border: none;
   border-radius: 5px;
@@ -73,7 +73,7 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #0277bd; /* Цвет при наведении */
 }
 
 /* Стили для основного контента */
@@ -108,16 +108,64 @@ th, td {
 }
 
 th {
-  background-color: #f1f1f1;
-  color: #007bff;
+  background-color: #e1f5fe; /* Светлый синий */
+  color: #0288d1;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #f1f8e9;
 }
 
 tbody tr:hover {
-  background-color: #e9ecef;
+  background-color: #e1f5fe;
+}
+
+/* Кнопка "Об авторе" */
+.about-author-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #006d77;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.about-author-btn:hover {
+  background-color: #0288d1;
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* Адаптивность для мобильных устройств */
@@ -154,4 +202,3 @@ tbody tr:hover {
     padding: 10px;
   }
 }
-

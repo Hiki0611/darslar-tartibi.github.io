@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
   function updateGroups(course) {
     let groups = [];
     if (course === "1-course") {
-      groups = ["group-1", "group-2", "group-3", "group-4", "group-5", "group-6", "group-7", "group-8", "group-9", "group-10"];
+      groups = ["1--24", "2--24", "3--24", "4--24", "6--24", "6--24", "7--24", "8--24", "9--24", "10--24"];
     } else if (course === "2-course") {
-      groups = ["group-1", "group-2", "group-3", "group-4", "group-5", "group-6", "group-7", "group-8", "group-9", "group-10"];
+      groups = ["1--23", "2--23", "3--23", "4--23", "5--23", "6--23", "7--23", "8--23", "9--23", "10--23"];
     }
     
     // Очищаем список групп и добавляем новые опции
@@ -60,12 +60,34 @@ document.addEventListener("DOMContentLoaded", function() {
           const row = tableBody.insertRow();
           const noLessonsCell = row.insertCell(0);
           noLessonsCell.colSpan = 2;
-          noLessonsCell.textContent = "Uroklar yo'q bu kunda";
+          noLessonsCell.textContent = "Uroklar bu kunda yo'q";
         }
       })
       .catch(error => {
-        console.error('Xatolik yuz berdi:', error);
-        alert('Jadvalni yuklab olishda xatolik yuz berdi. Iltimos, fayl yo‘lini tekshirib ko‘ring.');
+        console.error('Xatolik:', error);
+        alert('Xatolik yuz berdi. Fayl manzili to\'g\'ri ekanligini tekshiring.');
       });
+  });
+
+  // Функция для открытия модального окна
+  const authorBtn = document.getElementById('author-btn');
+  const authorModal = document.getElementById('author-modal');
+  const closeBtn = document.getElementById('close-btn');
+
+  // Открытие модального окна
+  authorBtn.addEventListener('click', function() {
+    authorModal.style.display = "block";
+  });
+
+  // Закрытие модального окна
+  closeBtn.addEventListener('click', function() {
+    authorModal.style.display = "none";
+  });
+
+  // Закрытие модального окна при клике вне его
+  window.addEventListener('click', function(event) {
+    if (event.target === authorModal) {
+      authorModal.style.display = "none";
+    }
   });
 });

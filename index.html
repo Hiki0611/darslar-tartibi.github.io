@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soat Jadvali</title>
+  <title>Расписание Уроков</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
-        <h1>Soat Jadvali</h1>
+        <h1>Darslar jadvali</h1>
       </div>
       <div class="navbar-links">
         <form id="schedule-form">
           <div class="form-group">
             <label for="course">Kurs:</label>
             <select id="course">
-              <option value="1-course">1-Kurs</option>
-              <option value="2-course">2-Kurs</option>
+              <option value="1-course">Kurs 1</option>
+              <option value="2-course">Kurs 2</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="group">Guruhi:</label>
+            <label for="group">Guruh:</label>
             <select id="group"></select>
           </div>
 
@@ -50,25 +50,27 @@
     <table id="schedule-table">
       <thead>
         <tr>
-          <th>Soat</th>
+          <th>Urok</th>
           <th>Vaqt</th>
         </tr>
       </thead>
       <tbody>
-        <!-- Jadval shu yerga yuklanadi -->
+        <!-- Jadval bu yerga yuklanadi -->
       </tbody>
     </table>
   </div>
 
-  <div class="modal" id="about-author-modal">
+  <!-- Knpka "Muallif haqida" va modali oynasi -->
+  <button id="author-btn">Muallif haqida</button>
+
+  <div id="author-modal" class="modal">
     <div class="modal-content">
-      <span class="close" id="close-modal-btn">&times;</span>
+      <span id="close-btn" class="close">&times;</span>
       <h2>Muallif haqida</h2>
-      <p>Ushbu saytni yaratgan muallif haqida ma'lumotlar.</p>
+      <p>Ushbu dastur Farg`ona viloyati, So`x tumanidagi Texnikumning 1 kurs 3-24 guruh talabasi GOFURJONOV HIKMATULLO tomonidan Texnikum talabalari uchun yaratildi.</p>
+      <p>Telefon raqam: +998 99 141 98 36</p>
     </div>
   </div>
-
-  <button id="about-author-btn" class="about-author-btn">Muallif haqida</button>
 
   <script src="script.js"></script>
 </body>

@@ -60,8 +60,8 @@ function createBookCard(book) {
     return `
         <div class="book-item">
             <h4>${book.title}</h4>
-            <p>Автор: ${book.author}</p>
-            <p>Курс: ${book.course}</p>
+            <p>Kitob muallifi: ${book.author}</p>
+            <p>Qaysi kurs uchun: ${book.course}</p>
             <button class="book-download" data-file="${book.file}">
                 Yuklab olish
             </button>

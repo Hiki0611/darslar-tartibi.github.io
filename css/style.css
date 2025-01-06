@@ -243,7 +243,7 @@ main.sidebar-active {
 }
 
 .hero {
-    background-image: url('path_to_your_image.jpg'); /* Фоновое изображение */
+    background-image: url('main.jpg'); /* Фоновое изображение */
     background-size: cover;
     background-position: center;
     padding: 60px 0;

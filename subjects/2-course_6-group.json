@@ -1,0 +1,178 @@
+{
+    "days": [
+        {
+            "day": "Dushanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Matematika",
+                    "room": "101",
+                    "teacher": "A. T. Tursunov"
+                },
+                {
+                    "time": "10:25 - 11:45",
+                    "subject": "Informatika",
+                    "room": "102",
+                    "teacher": "D. Sh. Rahmonov"
+                },
+                {
+                    "time": "11:50 - 13:10",
+                    "subject": "Fizika",
+                    "room": "103",
+                    "teacher": "N. A. Karimov"
+                },
+                {
+                    "time": "13:15 - 14:35",
+                    "subject": "Kimyo",
+                    "room": "104",
+                    "teacher": "S. R. Nematov"
+                }
+            ]
+        },
+        {
+            "day": "Seshanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Adabiyot",
+                    "room": "201",
+                    "teacher": "O. A. Shamsiyev"
+                },
+                {
+                    "time": "10:25 - 11:45",
+                    "subject": "Biologiya",
+                    "room": "202",
+                    "teacher": "T. N. Davlatov"
+                },
+                {
+                    "time": "11:50 - 13:10",
+                    "subject": "Tarix",
+                    "room": "203",
+                    "teacher": "B. A. Nasirov"
+                },
+                {
+                    "time": "13:15 - 14:35",
+                    "subject": "Filosofiya",
+                    "room": "301",
+                    "teacher": "M. Z. Alimov"
+                }
+            ]
+        },
+        {
+            "day": "Chorshanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Matematika",
+                    "room": "101",
+                    "teacher": "A. T. Tursunov"
+                },
+                {
+                    "time": "10:25 - 11:45",
+                    "subject": "Informatika",
+                    "room": "102",
+                    "teacher": "D. Sh. Rahmonov"
+                },
+                {
+                    "time": "11:50 - 13:10",
+                    "subject": "Fizika",
+                    "room": "103",
+                    "teacher": "N. A. Karimov"
+                },
+                {
+                    "time": "13:15 - 14:35",
+                    "subject": "Kimyo",
+                    "room": "104",
+                    "teacher": "S. R. Nematov"
+                }
+            ]
+        },
+        {
+            "day": "Payshanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Adabiyot",
+                    "room": "201",
+                    "teacher": "O. A. Shamsiyev"
+                },
+                {
+                    "time": "10:25 - 11:45",
+                    "subject": "Biologiya",
+                    "room": "202",
+                    "teacher": "T. N. Davlatov"
+                },
+                {
+                    "time": "11:50 - 13:10",
+                    "subject": "Tarix",
+                    "room": "203",
+                    "teacher": "B. A. Nasirov"
+                },
+                {
+                    "time": "13:15 - 14:35",
+                    "subject": "Filosofiya",
+                    "room": "301",
+                    "teacher": "M. Z. Alimov"
+                }
+            ]
+        },
+        {
+            "day": "Juma",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Matematika",
+                    "room": "101",
+                    "teacher": "A. T. Tursunov"
+                },
+                {
+                    "time": "10:25 - 11:45",
+                    "subject": "Informatika",
+                    "room": "102",
+                    "teacher": "D. Sh. Rahmonov"
+                },
+                {
+                    "time": "11:50 - 13:10",
+                    "subject": "Fizika",
+                    "room": "103",
+                    "teacher": "N. A. Karimov"
+                },
+                {
+                    "time": "13:15 - 14:35",
+                    "subject": "Kimyo",
+                    "room": "104",
+                    "teacher": "S. R. Nematov"
+                }
+            ]
+        },
+        {
+            "day": "Shanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Adabiyot",
+                    "room": "201",
+                    "teacher": "O. A. Shamsiyev"
+                },
+                {
+                    "time": "10:25 - 11:45",
+                    "subject": "Biologiya",
+                    "room": "202",
+                    "teacher": "T. N. Davlatov"
+                },
+                {
+                    "time": "11:50 - 13:10",
+                    "subject": "Tarix",
+                    "room": "203",
+                    "teacher": "B. A. Nasirov"
+                },
+                {
+                    "time": "13:15 - 14:35",
+                    "subject": "Filosofiya",
+                    "room": "301",
+                    "teacher": "M. Z. Alimov"
+                }
+            ]
+        }
+    ]
+}

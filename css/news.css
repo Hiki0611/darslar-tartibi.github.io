@@ -1,0 +1,87 @@
+.news-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Плавная анимация */
+}
+
+.news-item:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.6); /* Эффект свечения */
+    transform: scale(1.05); /* Легкое увеличение блока */
+}
+
+.news-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.news-image:hover {
+    transform: scale(1.05); /* Легкое увеличение изображения при наведении */
+}
+
+.news-content {
+    color: var(--text-color);
+}
+
+.news-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.news-content h3:hover {
+    color: var(--hover-color); /* Цвет заголовка при наведении */
+}
+
+.news-date {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.news-date:hover {
+    color: var(--primary-color); /* Подсветка даты при наведении */
+}
+
+.news-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.news-description:hover {
+    color: var(--hover-color); /* Цвет описания при наведении */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .news-item {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .news-image {
+        max-height: 200px;
+    }
+
+    .news-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .news-description {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,54 @@
+# Инструкция по наполнению сайта
+
+1. ФОТОГРАФИИ
+Папка: /photo/
+Формат названия: YYYY-MM-DD-название.jpg
+Пример: 
+- /photo/2024-03-15-open-day.jpg
+- /photo/2024-03-10-olympiad.jpg
+Рекомендуемый размер: 1200x800px
+
+2. PDF УЧЕБНИКИ
+Папка: /books/
+Формат названия: предмет-курс-название.pdf
+Пример:
+- /books/math-1-basic.pdf
+- /books/physics-1-mechanics.pdf
+
+3. РАСПИСАНИЕ (JSON)
+Папка: /subjects/
+Формат названия: курс-course_группа-group.json
+Пример: 
+- /subjects/1-course_1-group.json
+- /subjects/2-course_1-group.json
+
+4. НОВОСТИ (JSON)
+Файл: /data/news.json
+Формат:
+{
+    "news": [
+        {
+            "id": 1,
+            "title": "Заголовок новости",
+            "date": "YYYY-MM-DD",
+            "content": "Текст новости",
+            "image": "photo/YYYY-MM-DD-название.jpg"
+        }
+    ]
+}
+
+5. УЧЕБНИКИ (JSON)
+Файл: /data/books.json
+Формат:
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Название учебника",
+            "author": "Автор",
+            "course": 1,
+            "category": "Математика",
+            "file": "books/math-1-basic.pdf"
+        }
+    ]
+}

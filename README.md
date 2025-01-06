@@ -1,1 +1,0 @@
-# darslar-tartibi.github.io

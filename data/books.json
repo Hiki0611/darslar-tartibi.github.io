@@ -1,0 +1,20 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Matematika",
+            "author": "A. Q. Amanov",
+            "course": 1,
+            "file": "books/math-1-book.pdf",
+            "category": "Matematika"
+        },
+        {
+            "id": 2,
+            "title": "Fizika",
+            "author": "N. Sh. Turdiyev",
+            "course": 1,
+            "file": "books/fizika-1-book.pdf",
+            "category": "Fizika"
+        }
+    ]
+}

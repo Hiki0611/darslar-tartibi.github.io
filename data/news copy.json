@@ -1,0 +1,18 @@
+{
+    "news": [
+        {
+            "id": 1,
+            "title": "Ochiq dars kunlari",
+            "date": "2025-03-15",
+            "content": "Texnikum siz hammangizni ochiq darsga taklif etib qoladi, zero fardzandingiz haqida befarq bo`lmang!  USHBU RASM VA GAPLAR SHUNCHAKI SINOV UCHUN",
+            "image": "photo/open-day.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Победа в городской олимпиаде",
+            "date": "2024-03-10",
+            "content": "Наши студенты заняли первое место в городской олимпиаде по программированию",
+            "image": "photo/olympiad.jpg"
+        }
+    ]
+}

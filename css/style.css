@@ -1,0 +1,333 @@
+:root {
+    --primary-color: #662E1C;
+    --secondary-color: #C9A66B;
+    --text-color: #fff;
+    --background-color: #C9A66B;
+    --hover-color: #ec8918;
+}
+
+[data-theme="dark"] {
+    --primary-color: #079299;
+    --secondary-color: #003B46;
+    --text-color: #fff;
+    --background-color: #003B46;
+    --hover-color: #66A5AD;
+}
+
+body {
+    margin: 0;
+    padding: 60px 0 0 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Hero section */
+.hero {
+    height: 60vh;
+    background-image: url('../photo/-college-main.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin: -20px -20px 0 -20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgb(#662E1C), #662E1C);
+    z-index: 1;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+/* About college section */
+.about-college {
+    padding: 2rem 0;
+}
+
+.college-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Rest of the styles remain the same */
+main {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+main.sidebar-active {
+    margin-left: 250px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    main.sidebar-active {
+        margin-left: 0;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .college-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+.news-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.news-image {
+    width: 100%;
+    max-height: 300px; /* Максимальная высота изображения */
+    object-fit: cover; /* Сохраняет пропорции и обрезает изображение, если оно слишком большое */
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.news-content h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+}
+
+.news-date {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .news-item {
+        padding: 15px;
+    }
+
+    .news-image {
+        max-height: 200px; /* Изменяем максимальную высоту для мобильных устройств */
+    }
+}
+
+#about {
+    background: linear-gradient(135deg, rgb(14, 185, 190), rgba(194, 3, 0, 0.959));
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('your-image.jpg') no-repeat center center/cover;
+    opacity: 0.15;
+    border-radius: 20px;
+}
+
+#about .about-content {
+    position: relative;
+    z-index: 1;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#about .contact-info {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+#about .contact-info p {
+    margin: 5px 0;
+}
+
+#about .contact-info a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.9rem;
+    background-color: var(--primary-color);
+    padding: 30px 20px;
+    border-radius: 30px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#about .contact-info a:hover {
+    background-color: var(--hover-color);
+}
+
+
+#home {
+    padding: 40px 20px;
+    background-color: var(--background-color);
+}
+
+.hero {
+    background-image: url('path_to_your_image.jpg'); /* Фоновое изображение */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.about-college {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.about-college h2 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about-college p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.college-features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature {
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.feature:hover {
+    transform: translateY(-10px); /* Легкое поднятие при наведении */
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* Стиль для мобильных устройств */
+@media (max-width: 768px) {
+    .college-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 80%; /* на мобильных устройствах занимать больше места */
+    }
+}

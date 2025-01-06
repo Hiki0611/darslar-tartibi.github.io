@@ -36,9 +36,9 @@ function displaySchedule(daySchedule) {
         <table>
             <thead>
                 <tr>
-                    <th>Время</th>
-                    <th>Предмет</th>
-                    <th>Преподаватель</th>
+                    <th>Dars vaqti</th>
+                    <th>Dars nomi</th>
+                    <th>O\`ituvchi</th>
                 </tr>
             </thead>
             <tbody>

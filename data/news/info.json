@@ -1,21 +1,21 @@
 {
   "news": [
     {
-      "title": "Yangi o'quv dasturi",
+      "title": "Biror-bir mavzu",
       "date": "2025-01-06",
-      "content": "Bu yil biz o'quv dasturini yangiladik, yangi informatika va robototexnika kurslarini qo'shdik. Bu test rasm va xabar faqat dasturfunksiyalarini ko'rsatish uchun yaratilgan. Agar sizda o'zingizning yangiliklaringiz bo'lsa, menga murojaat qiling, men ularni dasturga joylashtiraman.",
+      "content": "Bu test rasm va xabar faqat dasturfunksiyalarini ko'rsatish uchun yaratilgan. Agar sizda o'zingizning yangiliklaringiz bo'lsa, menga murojaat qiling, men ularni dasturga joylashtiraman.",
       "image": "1.jpg"
     },
     {
-      "title": "Yangi binoning ochilishi",
+      "title": "Test mavzu",
       "date": "2025-01-05",
-      "content": "Yangi binoning ochilishi haqida xabar bermoqchimiz, bu oylikda zamonaviy amaliy mashg'ulotlar o'quv xonalari bilan jihozlangan yangi bino ochildi. Bu test rasm va xabar faqat dastur funksiyalarini ko'rsatish uchun yaratilgan. Agar sizda yangiliklar bo'lsa, menga murojaat qiling va men ularni dasturga joylashtiraman.",
+      "content": "Bu test rasm va xabar faqat dastur funksiyalarini ko'rsatish uchun yaratilgan. Agar sizda yangiliklar bo'lsa, menga murojaat qiling va men ularni dasturga joylashtiraman.",
       "image": "2.jpg"
     },
     {
-      "title": "Bitiruvchilar bilan uchrashuv",
+      "title": "Qandaydir mavzu",
       "date": "2025-01-04",
-      "content": "Biz bitiruvchilar bilan uchrashuv o'tkazdik, ular texnologiyalar sohasidagi muvaffaqiyatlari va ish tajribalari bilan o'rtoqlashdilar. Bu test rasm va xabar faqat dastur funksiyalarini ko'rsatish uchun yaratilgan. Agar sizda yangiliklar bo'lsa, ularni men bilan bo'lishish uchun murojaat qiling.",
+      "content": "Bu test rasm va xabar faqat dastur funksiyalarini ko'rsatish uchun yaratilgan. Agar sizda yangiliklar bo'lsa, ularni men bilan bo'lishish uchun murojaat qiling.",
       "image": "3.jpg"
     }
   ]

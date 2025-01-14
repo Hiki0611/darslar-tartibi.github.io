@@ -1,0 +1,179 @@
+{
+    "days": [
+        {
+            "day": "Dushanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Kiritilmagan",
+                    "room": "101",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "10:30 - 11:50",
+                    "subject": "Kiritilmagan",
+                    "room": "102",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "12:10 - 13:30",
+                    "subject": "Kiritilmagan",
+                    "room": "103",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "13:20 - 14:40",
+                    "subject": "Kiritilmagan",
+                    "room": "104",
+                    "teacher": "Kiritilmagan"
+                }
+            ]
+        },
+        {
+            "day": "Seshanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Kiritilmagan",
+                    "room": "201",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "10:30 - 11:50",
+                    "subject": "Kiritilmagan",
+                    "room": "202",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "12:10 - 13:30",
+                    "subject": "Kiritilmagan",
+                    "room": "203",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "13:20 - 14:40",
+                    "subject": "Kiritilmagan",
+                    "room": "301",
+                    "teacher": "Kiritilmagan"
+                }
+            ]
+        },
+        {
+            "day": "Chorshanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Kiritilmagan",
+                    "room": "101",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "10:30 - 11:50",
+                    "subject": "Kiritilmagan",
+                    "room": "102",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "12:10 - 13:30",
+                    "subject": "Kiritilmagan",
+                    "room": "103",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "13:20 - 14:40",
+                    "subject": "Kiritilmagan",
+                    "room": "104",
+                    "teacher": "Kiritilmagan"
+                }
+            ]
+        },
+        {
+            "day": "Payshanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Kiritilmagan",
+                    "room": "201",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "10:30 - 11:50",
+                    "subject": "Kiritilmagan",
+                    "room": "202",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "12:10 - 13:30",
+                    "subject": "Kiritilmagan",
+                    "room": "203",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "13:20 - 14:40",
+                    "subject": "Kiritilmagan",
+                    "room": "301",
+                    "teacher": "Kiritilmagan"
+                }
+            ]
+        },
+        {
+            "day": "Juma",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Kiritilmagan",
+                    "room": "101",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "10:30 - 11:50",
+                    "subject": "Kiritilmagan",
+                    "room": "102",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "12:10 - 13:30",
+                    "subject": "Kiritilmagan",
+                    "room": "103",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "13:20 - 14:40",
+                    "subject": "Kiritilmagan",
+                    "room": "104",
+                    "teacher": "Kiritilmagan"
+                }
+            ]
+        },
+        {
+            "day": "Shanba",
+            "lessons": [
+                {
+                    "time": "09:00 - 10:20",
+                    "subject": "Kiritilmagan",
+                    "room": "201",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "10:30 - 11:50",
+                    "subject": "Kiritilmagan",
+                    "room": "202",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "12:10 - 13:30",
+                    "subject": "Kiritilmagan",
+                    "room": "203",
+                    "teacher": "Kiritilmagan"
+                },
+                {
+                    "time": "13:20 - 14:40",
+                    "subject": "Kiritilmagan",
+                    "room": "301",
+                    "teacher": "Kiritilmagan"
+                }
+            ]
+        }
+    ]
+}
+

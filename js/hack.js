@@ -168,7 +168,7 @@
             return;
         }
 
-        let tableHtml = '<table><thead><tr><th>Время</th><th>Предмет</th><th>Преподаватель</th></tr></thead><tbody>';
+        let tableHtml = '<table><thead><tr><th>Dars vaqti</th><th>Dars Nomi</th><th>O'qituvchi</th></tr></thead><tbody>';
         daySchedule.lessons.forEach(lesson => {
             tableHtml += `<tr>
                 <td>${lesson.time}</td>
